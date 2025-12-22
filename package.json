@@ -1,0 +1,28 @@
+{
+  "name": "atlas-smartfactory",
+  "version": "1.0.0",
+  "description": "Digital platform for Atlas Viandes Agro-Industries - Complete transformation",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "install-all": "npm install && npm install --workspace=backend && npm install --workspace=frontend",
+    "dev": "npm run dev --workspace=backend & npm run dev --workspace=frontend",
+    "build": "npm run build --workspace=backend && npm run build --workspace=frontend",
+    "start": "npm start --workspace=backend",
+    "test": "npm test --workspace=backend && npm test --workspace=frontend"
+  },
+  "keywords": [
+    "food-processing",
+    "traceability",
+    "iot",
+    "haccp",
+    "quality-control",
+    "manufacturing",
+    "mes"
+  ],
+  "author": "Atlas SmartFactory Team",
+  "license": "MIT"
+}
