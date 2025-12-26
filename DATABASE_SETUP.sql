@@ -155,3 +155,9 @@ INSERT INTO Lots (id, qrCode, lotNumber, productType, quantity, unit, status, te
 -- Display creation confirmation
 SELECT 'Database setup complete!' AS status;
 SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'atlas_smartfactory';
+
+CREATE USER IF NOT EXISTS 'atlas_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'atlas_password';
+CREATE USER IF NOT EXISTS 'atlas_user'@'127.0.0.1' IDENTIFIED WITH mysql_native_password BY 'atlas_password';
+GRANT ALL PRIVILEGES ON atlas_smartfactory.* TO 'atlas_user'@'localhost';
+GRANT ALL PRIVILEGES ON atlas_smartfactory.* TO 'atlas_user'@'127.0.0.1';
+FLUSH PRIVILEGES;

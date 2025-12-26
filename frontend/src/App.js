@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import ProtectedRoute from './components/ProtectedRoute';
 import Login from './pages/Login';
+import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import DirectorDashboard from './pages/DirectorDashboard';
 import OperatorDashboard from './pages/OperatorDashboard';
@@ -55,11 +56,12 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Login />} />
-        
+
         <Route
-          path="/*"
+          path="/app/*"
           element={
             <ProtectedRoute>
               <div className="flex h-screen bg-gray-100">
@@ -100,7 +102,7 @@ function App() {
                           />
                         }
                       />
-                      <Route path="*" element={<Navigate to="/" replace />} />
+                      <Route path="*" element={<Navigate to="/app/" replace />} />
                     </Routes>
                   </main>
                 </div>
